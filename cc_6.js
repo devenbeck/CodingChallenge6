@@ -77,3 +77,17 @@ let discountFunction = amount => amount > 500 ? amount * 0.9 : amount;     //fun
 let discountedOrders = applyBulkDiscount(orders, discountFunction);
 
 console.log(discountedOrders) // output for new array should be: [200,540,1080, 450, 720]
+
+//Task 7: Closures
+// Scenario: Business Expense Tracker
+// make a function that returns another function to add expenses and keep a running total
+function createExpenseTracker() {
+    let totalExpenses = 0;
+    return function (expense) {
+        totalExpenses += expense;   //just keep adding the expenses on to the previous total
+        return `Total Expenses: $${totalExpenses}`;
+    };
+};
+let tracker = createExpenseTracker();
+console.log(tracker(200));   //output should be 200 because it's the first one
+console.log(tracker(150));   //output should be 350 because adding it to the 200
