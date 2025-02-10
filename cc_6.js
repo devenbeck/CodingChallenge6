@@ -53,3 +53,13 @@ function calculateSubscriptionCost(plan, months, discount = 0) {  //function tha
 }
 console.log(calculateSubscriptionCost("Basic", 6, 10));    // (6*10) - 10 = 50 printed output
 console.log(calculateSubscriptionCost("Premium", 12, 0)); // (12*20) - 0 = 240 printed output
+
+//Task 5: Returning Values
+// Scenario: Currency Conversion
+function convertCurrency(amount, exchangeRate) {       //function to convert amount based on exchange rate
+    let convertAmount = amount * exchangeRate 
+    return `Converted Amount: $${convertAmount.toFixed(2)}`;  //toFixed rounds it to 2 decimal places
+
+};
+console.log(convertCurrency(100, 1.1));   //output should be $110.00
+console.log(convertCurrency(250,0.85));   //output should be $212.50
