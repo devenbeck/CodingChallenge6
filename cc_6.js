@@ -63,3 +63,17 @@ function convertCurrency(amount, exchangeRate) {       //function to convert amo
 };
 console.log(convertCurrency(100, 1.1));   //output should be $110.00
 console.log(convertCurrency(250,0.85));   //output should be $212.50
+
+//Task  6: Higher Order Functions
+// Scenario: Discount Strategy for Bulk Orders
+// write a higher order function that applies a 10% discount on orders above $500
+
+let orders = [200,600,1200,450,800]; // Orders Array
+
+function applyBulkDiscount(orders, discountFunction) {
+    return orders.map (discountFunction)   //map method used to create new array after editing each element of the existing array
+}; 
+let discountFunction = amount => amount > 500 ? amount * 0.9 : amount;     //function checks if amount is greater than 500 so it knows to add the 10% discount or not
+let discountedOrders = applyBulkDiscount(orders, discountFunction);
+
+console.log(discountedOrders) // output for new array should be: [200,540,1080, 450, 720]
