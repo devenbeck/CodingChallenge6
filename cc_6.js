@@ -91,3 +91,17 @@ function createExpenseTracker() {
 let tracker = createExpenseTracker();
 console.log(tracker(200));   //output should be 200 because it's the first one
 console.log(tracker(150));   //output should be 350 because adding it to the 200
+
+//Task 8: Recursion in JavaScript
+// Scenario: Employee Promotion Evaluation
+// with each promotion taking 2 years, determine the number of years to reach level 10
+
+function calculateYearstoPromotion(employeeLevel) {
+    if (employeeLevel >= 10) {
+        return "Years to Level 10 : 0 ";     // if the employee level is already 10 or higher than there's nothing to be determined
+    }
+    else return `Years to Level 10 : ${(10 - employeeLevel) * 2 }`;   //formula
+
+}; 
+console.log(calculateYearstoPromotion(7));  //should print (10 - 7) *2 = 6
+console.log(calculateYearstoPromotion(5)); //should print (10 - 5) * 2 = 10
